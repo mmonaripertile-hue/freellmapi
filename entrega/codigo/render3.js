@@ -116,13 +116,13 @@ function flash(t, t0) { const a = 1 - clamp((t - t0) / .3, 0, 1); if (t >= t0 &&
 
 /* ---------------- legenda (igual à referência: pílula branca, Poppins Bold, 1 palavra por vez) ---------------- */
 const KEY = new Set(['perna', 'pernas', 'búlgaro', '30', 'sofá', 'cuidado', 'erro', 'perto', 'equilíbrio', 'peito', 'tronco', 'devagar', 'controle', 'empurrando', 'chão', 'acontece', 'descida', 'subida', 'quadríceps', 'glúteos', 'força', 'fortalecer', 'Semana', '1', '2', '3', '4', '8', '10', '12', '15', 'repetições', 'tremendo', 'queimar', 'firmeza', 'estável', 'controlado', 'ativos', 'melhorar', 'casa', 'Instagram', 'Tia', 'Nastácia', 'frente', 'passo', 'incline', 'coxa', 'músculos', 'esforço', 'trás', 'afastado', 'desça', 'subindo', 'academia', 'aparelho', 'exercício', 'siga']);
-x.font = '100px PopB'; const ASC = x.measureText('l').actualBoundingBoxAscent / 100; const CAP_FS = Math.round(60 / ASC);
+x.font = '100px PopB'; const ASC = x.measureText('l').actualBoundingBoxAscent / 100; const CAP_FS = Math.round(52 / ASC);
 function caption(t) {
   const w = WORDS.find(w => t >= w.t0 && t < w.t1); if (!w) return;
-  const s = w.w, kk = 1 - .14 * Math.pow(1 - clamp((t - w.t0) / .0667, 0, 1), 1.2); x.save(); x.font = `${CAP_FS}px PopB`; const tw = x.measureText(s).width, pw = tw + 102, ph = 107, cx = 540, cy = 1649;
-  x.translate(cx, cy); x.scale(kk, kk); x.translate(-cx, -cy); x.fillStyle = '#FFFFFF'; rrect(cx - pw / 2, cy - ph / 2, pw, ph, 18); x.fill();
+  const s = w.w, kk = 1 - .14 * Math.pow(1 - clamp((t - w.t0) / .0667, 0, 1), 1.2); x.save(); x.font = `${CAP_FS}px PopB`; const tw = x.measureText(s).width, pw = tw + 89, ph = 93, cx = 540, cy = 1600;
+  x.translate(cx, cy); x.scale(kk, kk); x.translate(-cx, -cy); x.fillStyle = '#FFFFFF'; rrect(cx - pw / 2, cy - ph / 2, pw, ph, 16); x.fill();
   x.fillStyle = KEY.has(s) ? '#EC8824' : '#17141A'; x.textAlign = 'center'; x.textBaseline = 'alphabetic';
-  x.fillText(s, cx, cy + 60 / 2 - 1); x.restore();
+  x.fillText(s, cx, cy + 52 / 2 - 1); x.restore();
 }
 
 /* ---------------- personagem ---------------- */
